@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mobis Finance - Learn Tech & Make Money</title>
+<style>
+/* === GLOBAL STYLES === */
+*{box-sizing:border-box;}
+body{margin:0;font-family:Arial, sans-serif;background:#f2f4f7;color:#222;}
+
+/* === NAVBAR === */
+.nav{
+    position:sticky;
+    top:0;
+    background:#0d0d0d;
+    color:#fff;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 15px rgba(0,0,0,0.4);
+    z-index:50;
+}
+.toggle{cursor:pointer;font-size:24px;}
+.logo{text-transform:uppercase;font-weight:bold;font-size:20px;}
+
+/* === SIDEBAR === */
+.sidebar{
+    position:fixed;
+    left:-250px;
+    top:0;
+    width:250px;
+    height:100%;
+    background:#111;
+    padding:25px;
+    color:white;
+    transition:0.3s;
+    z-index:60;
+    box-shadow:3px 0 15px rgba(0,0,0,0.4);
+}
+.sidebar a{
+    display:block;
+    color:white;
+    padding:12px 0;
+    text-decoration:none;
+}
+.sidebar a:hover{
+    color:#00e0ff;
+}
+.close-side{
+    font-size:25px;
+    float:right;
+    cursor:pointer;
+}
+
+/* === HERO === */
+.hero{
+    padding:120px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#00e0ff,#0066ff);
+    color:white;
+    box-shadow:0 0 25px rgba(0,0,0,0.3);
+}
+.hero h1{
+    font-size:42px;
+    animation:fadeInDown 1.2s ease;
+}
+.hero p{
+    font-size:18px;
+    margin-top:10px;
+    animation:fadeInUp 1.2s ease;
+}
+
+/* === FEATURES === */
+.section{
+    margin:40px auto;
+    max-width:1100px;
+    padding:20px;
+}
+.features{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+.card{
+    background:white;
+    width:320px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* === COURSES === */
+.courses{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+.course-card{
+    background:white;
+    padding:20px;
+    width:330px;
+    border-radius:12px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* === FOOTER === */
+.footer{
+    background:#0d0d0d;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+
+/* === POPUP === */
+.popup{
+    position:fixed;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:70;
+}
+.popup-content{
+    background:white;
+    padding:25px;
+    width:90%;
+    max-width:420px;
+    border-radius:10px;
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+.close{
+    float:right;
+    cursor:pointer;
+    font-size:22px;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeInDown{
+    0%{opacity:0;transform:translateY(-40px);}
+    100%{opacity:1;transform:translateY(0);}
+}
+@keyframes fadeInUp{
+    0%{opacity:0;transform:translateY(40px);}
+    100%{opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+    <span class="close-side" onclick="closeSidebar()">&times;</span>
+    <h2>Menu</h2>
+    <a href="#hero">Home</a>
+    <a href="#features">Features</a>
+    <a href="#courses">Courses</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<!-- NAVBAR -->
+<div class="nav">
+    <div class="toggle" onclick="openSidebar()">☰</div>
+    <div class="logo">mobis finance</div>
+</div>
+
+<!-- HERO -->
+<div class="hero" id="hero">
+    <h1>Learn Tech. Build Wealth.</h1>
+    <p>Mobis Finance teaches you practical tech skills that help you earn online.</p>
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2>Welcome to Mobis Finance</h2>
+        <p>Your journey into making money with tech starts here.</p>
+    </div>
+</div>
+
+<!-- FEATURES SECTION -->
+<div class="section" id="features">
+    <h2 style="text-align:center;">Why Choose Mobis Finance?</h2>
+    <div class="features">
+        <div class="card">
+            <h3>Expert Mentorship</h3>
+            <p>Learn from professionals who have made real money in tech.</p>
+        </div>
+
+        <div class="card">
+            <h3>Beginner Friendly</h3>
+            <p>No prior experience needed. Start from scratch.</p>
+        </div>
+
+        <div class="card">
+            <h3>Real Money Skills</h3>
+            <p>We focus on practical skills that earn income quickly.</p>
+        </div>
+    </div>
+</div>
+
+<!-- COURSES SECTION -->
+<div class="section" id="courses">
+    <h2 style="text-align:center;">Our Top Courses</h2>
+    <div class="courses">
+
+        <div class="course-card">
+            <h3>Web Development</h3>
+            <p>Learn HTML, CSS, JavaScript and build real projects.</p>
+        </div>
+
+        <div class="course-card">
+            <h3>Video Editing</h3>
+            <p>Create high-quality content using CapCut and more.</p>
+        </div>
+
+        <div class="course-card">
+            <h3>Tech Money Blueprint</h3>
+            <p>Step-by-step guide on how to make money from tech skills.</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer" id="contact">
+    <p>© 2025 Mobis Finance — Empowering the next generation of tech earners.</p>
+</div>
+
+<script>
+window.onload = function(){
+    setTimeout(()=>{ document.getElementById("popup").style.display="flex"; }, 800);
+};
+
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
+
+function openSidebar(){
+    document.getElementById("sidebar").style.left = "0";
+}
+
+function closeSidebar(){
+    document.getElementById("sidebar").style.left = "-250px";
+}
+</script>
+
+</body>
+</html>
